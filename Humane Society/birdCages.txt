@@ -1,0 +1,10 @@
+bird 1 none
+bird 2 none
+bird 3 none
+bird 4 cookie
+bird 5 none
+bird 6 none
+bird 7 none
+bird 8 none
+bird 9 wally
+bird 10 none

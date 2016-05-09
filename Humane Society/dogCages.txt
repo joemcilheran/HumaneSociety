@@ -1,0 +1,10 @@
+dog 1 fido
+dog 2 butch
+dog 3 none
+dog 4 none
+dog 5 nipper
+dog 6 none
+dog 7 none
+dog 8 juniper
+dog 9 none
+dog 10 none

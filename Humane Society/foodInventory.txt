@@ -1,0 +1,3 @@
+dogFood 188
+catFood 200
+birdFood 100
