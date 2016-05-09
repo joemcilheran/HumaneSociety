@@ -19,7 +19,7 @@ namespace Humane_Society
         }
         public string get_task()
         {
-            Console.WriteLine("Please choose from the following:\n 'adoption'\n 'check-in'\n 'immunization'\n 'create cage'\n 'check food inventory'\n 'feed animals'\n 'check bank total'\n 'view animals'\n 'view cages'");
+            Console.WriteLine("Please choose from the following:\n 'adoption'\n 'check-in'\n 'immunization'\n 'create cage'\n 'check food inventory'\n 'feed animals'\n 'check bank total'\n 'view animals'\n 'view cages'\n 'view adopters'\n");
             string input = Console.ReadLine();
             return input;
         }
@@ -191,9 +191,10 @@ namespace Humane_Society
         {
             Console.WriteLine("{0} inventory now at {1} cups.", foodType, newAmount);
         }
-        public void display_adopter(string[] lineArray)
+        public void display_adopter(string[] lineArray, string splitPets)
         {
-            Console.WriteLine("name: {0}, pets: {1}", lineArray[0], lineArray[1]);
+            
+            Console.WriteLine("name: {0}, pets: {1}", lineArray[0], splitPets);
         }
         public string ask_which_to_type_to_adopt()
         {

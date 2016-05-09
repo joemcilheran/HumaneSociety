@@ -18,8 +18,8 @@ namespace Humane_Society
         }
         public string create_variable_string()
         {
-            string petsListString = String.Join(",", petsAdopted);
-            string variableString = String.Format("{0}, {1}", adopterName, petsListString);
+            string petsListString = String.Join("/", petsAdopted);
+            string variableString = String.Format("{0} {1}", adopterName, petsListString);
             return variableString;
         }
     }

@@ -2,3 +2,5 @@ fido dog collie 40 dog 3 True 1 no
 butch dog mutt 23 dog 3 True 2 no
 nipper dog shepherd 45 dog 3 True 5 no
 juniper dog hound 67 dog 3 True 8 no
+gitti dog tracker 45 dog 3 True 10 no
+hed dog poodle 67 dog 3 True 20 no

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adopter.cs" />
+    <Compile Include="Adoption.cs" />
     <Compile Include="Animal.cs" />
     <Compile Include="AnimalFactory.cs" />
     <Compile Include="Bank.cs" />
@@ -52,17 +53,21 @@
     <Compile Include="BirdCageFactory.cs" />
     <Compile Include="BirdFactory.cs" />
     <Compile Include="Cage.cs" />
+    <Compile Include="CageCreation.cs" />
     <Compile Include="CageFactory.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="CatCage.cs" />
     <Compile Include="CatCageFactory.cs" />
     <Compile Include="CatFactory.cs" />
+    <Compile Include="CheckIn.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="DogCage.cs" />
     <Compile Include="DogCageFactory.cs" />
     <Compile Include="DogFactory.cs" />
     <Compile Include="FileInteractions.cs" />
+    <Compile Include="FoodAndFeeding.cs" />
     <Compile Include="FoodInventory.cs" />
+    <Compile Include="Immunization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shelter.cs" />

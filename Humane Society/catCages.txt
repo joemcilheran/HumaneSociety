@@ -1,6 +1,6 @@
-cat 1 none
+cat 1 tasha
 cat 2 none
-cat 3 none
+cat 3 halfTroll
 cat 4 none
 cat 5 none
 cat 6 none

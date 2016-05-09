@@ -7,4 +7,14 @@ dog 6 none
 dog 7 none
 dog 8 juniper
 dog 9 none
-dog 10 none
+dog 10 gitti
+dog 11 none
+dog 12 none
+dog 13 none
+dog 14 none
+dog 15 none
+dog 16 none
+dog 17 none
+dog 18 none
+dog 19 none
+dog 20 hed

@@ -1,3 +1,3 @@
-dogFood 188
-catFood 182
-birdFood 197
+dogFood 255
+catFood 176
+birdFood 294

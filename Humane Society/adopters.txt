@@ -1,3 +1,1 @@
-joe, tasha
-joe, halfTroll
-bob, talbot
+joe bill/wally/cookie/talbot

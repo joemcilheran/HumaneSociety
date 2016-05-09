@@ -1,3 +1,3 @@
-tasha cat unknown 4 cat 2 True NA joe
-halfTroll cat tabby 8 cat 2 True NA joe
-talbot cat minx 6 cat 2 True NA bob
+tasha cat unknown 4 cat 2 True 1 no
+halfTroll cat tabby 8 cat 2 True 3 no
+talbot cat minx 6 cat 2 True NA joe

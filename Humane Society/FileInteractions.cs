@@ -16,114 +16,6 @@ namespace Humane_Society
             userInput = new UserInput();
         }
 
-
-
-        public void display_cageFile(string path)
-        {
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                userInput.display_cageFile(lineArray);
-            }
-        
-        }
-        public void display_animalFile(string path,string type)
-        {
-            List<int> checkList = new List<int>();
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                userInput.display_animalFile(lineArray);
-
-            }
-            if (checkList.Count() == 0)
-            {
-                userInput.display_none_of_type(type);
-            }
-
-        }
-        public void display_foodInventoryFile(string path)
-        {
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                userInput.display_foodInventoryFile(lineArray);
-
-            }
-
-        }
-        public void display_bank(string path)
-        {
-            string bankTotal = read_text(path);
-            userInput.display_bankTotal(bankTotal);
-        }
-        public void display_all_unadopted(string type)
-        {
-            List<int> checkList = new List<int>();
-            string path = get_file_path(type);
-            string[] file = File.ReadAllLines(path);
-            foreach(string line in file)
-            {
-                string[] lineArray = splitString(line);
-                if (lineArray[8].Equals("no"))
-                {
-                    userInput.display_animalFile(lineArray);
-                    checkList.Add(1);
-                }
-            }
-            if (checkList.Count() == 0)
-            {
-                userInput.display_noUnadopted(type);
-            }
-        }
-        public void display_all_adopted(string type)
-        {
-            List<int> checkList = new List<int>();
-            string path = get_file_path(type);
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                if (!lineArray[8].Equals("no"))
-                {
-                    userInput.display_animalFile(lineArray);
-                    checkList.Add(1);
-                }
-            }
-            if (checkList.Count() == 0)
-            {
-                userInput.display_noAdopted(type);
-            }
-        }
-        public void display_adopter(string adopterName)
-        {
-            string path = get_file_path("adopters");
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                if (lineArray[0] == adopterName)
-                {
-                    userInput.display_adopter(lineArray);
-                }
-            }
-        }
-        public void diplay_all_adopters()
-        {
-            string path = get_file_path("adopters");
-            string[] file = File.ReadAllLines(path);
-            foreach (string line in file)
-            {
-                string[] lineArray = splitString(line);
-                    userInput.display_adopter(lineArray);
-            }
-        }
-
-
-
         public string get_file_path(string fileName)
         {
             string path = String.Format(@"C: \Users\Joseph A McIlheran\Documents\Visual Studio 2015\Projects\Humane Society\Humane Society\{0}.txt", fileName);
@@ -180,6 +72,12 @@ namespace Humane_Society
         public string[] splitString(string input)
         {
             string[] inputString = input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+            return inputString;
+        }
+        public string[] splitPets(string input)
+        {
+            string[] stringSeparators = new string[] { "/" };
+            string[] inputString = input.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
             return inputString;
         }
 
