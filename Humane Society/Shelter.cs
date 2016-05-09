@@ -414,12 +414,6 @@ namespace Humane_Society
             string checkChoice = userInput.get_immunization_check();
             switch(checkChoice)
             {
-                case "check an animal by name":
-                    string animalName = userInput.get_name();
-                    search_by_name("dog", animalName);
-                    search_by_name("cat", animalName);
-                    search_by_name("bird", animalName);
-                    break;
                 case "check all cats":
                     display_unimmunized_animals("cat");
                     break;
@@ -436,7 +430,8 @@ namespace Humane_Society
            
         }
         public void search_by_name(string type, string animalName)
-        {           
+        {
+            List<int> checkList = new List<int>();
             string[] file = fileInteractions.convert_file_to_array(type);
             foreach (string line in file)
             {
@@ -445,6 +440,7 @@ namespace Humane_Society
                 if (lineArray[0] == animalName && lineArray[6] == "False") 
                 {
                     immunize_one_animal(type, animalName, lineArray, lineIndex);
+                    checkList.Add(1);
                     run_new_task();
                    
                 }
@@ -454,12 +450,11 @@ namespace Humane_Society
                     run_new_task();
                     
                 }
-                else
-                {
-                    userInput.display_no_animal_by_that_name(type);
-                    run_new_task();
-                   
-                }
+            }
+            if (checkList.Count == 0)
+            {
+                userInput.display_no_animal_by_that_name(type);
+                run_new_task();
 
             }
         }
@@ -491,7 +486,6 @@ namespace Humane_Society
         }
         public void immunize_all_of_type(string type)
         {
-            List<int> checkList = new List<int>();
             string[] file = fileInteractions.convert_file_to_array(type);
             foreach (string line in file)
             {
@@ -759,10 +753,10 @@ namespace Humane_Society
             string answer = userInput.ask_to_buy_more_food();
             switch(answer)
             {
-                case "quit":
+                case "no":
                     run_new_task();
                     break;
-                case "buy food":
+                case "yes":
                     buy_food("dogFood", path);
                     buy_food("catFood", path);
                     buy_food("birdFood", path);
@@ -798,7 +792,6 @@ namespace Humane_Society
                     
                     break;
                 case "no":
-                    run_new_task();
                     break;
                 default:
                     buy_food(foodType, path);
@@ -816,23 +809,43 @@ namespace Humane_Society
             {
                 case "dogs":
                     feed_animals("dog");
+                    feed_more_types();
                     break;
                 case "cats":
                     feed_animals("cat");
+                    feed_more_types();
                     break;
                 case "birds":
                     feed_animals("bird");
+                    feed_more_types();
                     break;
                 default:
                     run_new_task();
                     break;
+            }
+            
+        }
+        public void feed_more_types()
+        {
+            string input = userInput.ask_to_feed_more();
+            switch(input)
+            {
+                case "yes":
+                    run_feeding();
+                    break;
+                case "no":
+                    run_new_task();
+                    break;
+                default:
+                    feed_more_types();
+                    break;
+
             }
         }
         public void feed_animals(string type)
         {
             int dailyFoodTotal = get_dailyFoodTotal(type);
             check_and_deduct_from_inventory(dailyFoodTotal, type);
-            run_new_task();
         }
         public int get_dailyFoodTotal(string type)
         {
@@ -944,32 +957,49 @@ namespace Humane_Society
 
         public void run_animal_view()
         {
-            string input = userInput.which_animals_to_display();
+            string input = userInput.which_type_to_display();
             switch(input)
             {
+                case "dogs":
+                    view_a_type("dog");
+                    break;
+                case "cats":
+                    view_a_type("cat");
+                    break;
+                case "birds":
+                    view_a_type("birds");
+                    break;
+                case "quit":
+                    run_new_task();
+                    break;
+                default:
+                    run_animal_view();
+                    break;
+            }
+
+        }
+        public void view_a_type(string type)
+        {
+            string input = userInput.which_animals_to_display();
+            switch (input)
+            {
                 case "adopted":
-                    fileInteractions.display_adopted("dog");
-                    fileInteractions.display_adopted("cat");
-                    fileInteractions.display_adopted("bird");
+                    fileInteractions.display_all_adopted(type);
                     break;
                 case "unadopted":
-                    fileInteractions.display_all_unadopted("dog");
-                    fileInteractions.display_all_unadopted("cat");
-                    fileInteractions.display_all_unadopted("bird");
+                    fileInteractions.display_all_unadopted(type);
                     break;
                 case "all":
-                    string path = fileInteractions.get_file_path("dog");
-                    string pathOne = fileInteractions.get_file_path("cat");
-                    string pathTwo = fileInteractions.get_file_path("bird");
-                    fileInteractions.display_animalFile(path);
-                    fileInteractions.display_animalFile(pathOne);
-                    fileInteractions.display_animalFile(pathTwo);
+                    string path = fileInteractions.get_file_path(type);
+                    fileInteractions.display_animalFile(path,type);
+
                     break;
                 default:
                     run_new_task();
                     break;
             }
         }
+       
 
 
         public void run_new_task()

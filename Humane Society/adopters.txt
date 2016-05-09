@@ -1,2 +1,3 @@
 joe, tasha
 joe, halfTroll
+bob, talbot

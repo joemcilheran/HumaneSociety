@@ -28,14 +28,19 @@ namespace Humane_Society
             }
         
         }
-        public void display_animalFile(string path)
+        public void display_animalFile(string path,string type)
         {
+            List<int> checkList = new List<int>();
             string[] file = File.ReadAllLines(path);
             foreach (string line in file)
             {
                 string[] lineArray = splitString(line);
                 userInput.display_animalFile(lineArray);
 
+            }
+            if (checkList.Count() == 0)
+            {
+                userInput.display_none_of_type(type);
             }
 
         }
@@ -57,6 +62,7 @@ namespace Humane_Society
         }
         public void display_all_unadopted(string type)
         {
+            List<int> checkList = new List<int>();
             string path = get_file_path(type);
             string[] file = File.ReadAllLines(path);
             foreach(string line in file)
@@ -65,11 +71,17 @@ namespace Humane_Society
                 if (lineArray[8].Equals("no"))
                 {
                     userInput.display_animalFile(lineArray);
+                    checkList.Add(1);
                 }
             }
+            if (checkList.Count() == 0)
+            {
+                userInput.display_noUnadopted(type);
+            }
         }
-        public void display_adopted(string type)
+        public void display_all_adopted(string type)
         {
+            List<int> checkList = new List<int>();
             string path = get_file_path(type);
             string[] file = File.ReadAllLines(path);
             foreach (string line in file)
@@ -78,7 +90,12 @@ namespace Humane_Society
                 if (!lineArray[8].Equals("no"))
                 {
                     userInput.display_animalFile(lineArray);
+                    checkList.Add(1);
                 }
+            }
+            if (checkList.Count() == 0)
+            {
+                userInput.display_noAdopted(type);
             }
         }
         public void display_adopter(string adopterName)

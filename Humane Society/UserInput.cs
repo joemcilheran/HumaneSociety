@@ -105,7 +105,7 @@ namespace Humane_Society
         }
         public string get_immunization_check()
         {
-            Console.WriteLine("Would you like to: 'check an animal by name', 'check all cats', 'check all dogs', or 'check all birds'?");
+            Console.WriteLine("Would you like to: 'check all cats', 'check all dogs', or 'check all birds'?");
             string input = Console.ReadLine();
             return input;
         }
@@ -169,7 +169,7 @@ namespace Humane_Society
         }
         public void display_animalFile(string[] lineArray)
         {
-            Console.WriteLine("{0}\t\n type: {1}\n breed: {2}\n weight: {3} pounds\n foodType: {4}food\n foodPerDay: {5} cups\n immunizaionsUpToDate: {6}\n cagenumber: {7}\n adopted: {8}", lineArray[0],lineArray[1],lineArray[2],lineArray[3],lineArray[4],lineArray[5],lineArray[6],lineArray[7],lineArray[8]);
+            Console.WriteLine("{0}\t\n type: {1}\n breed: {2}\n weight: {3} pounds\n foodType: {4}food\n foodPerDay: {5} cups\n immunizaionsUpToDate: {6}\n cagenumber: {7}\n adopted: {8}\n", lineArray[0],lineArray[1],lineArray[2],lineArray[3],lineArray[4],lineArray[5],lineArray[6],lineArray[7],lineArray[8]);
         }
         public void display_foodInventoryFile(string[] lineArray)
         {
@@ -249,6 +249,12 @@ namespace Humane_Society
             string input = Console.ReadLine();
             return input;
         }
+        public string ask_to_feed_more()
+        {
+            Console.WriteLine("Would you like to feed more animals?");
+            string input = Console.ReadLine();
+            return input;
+        }
         public void insufficient_food(string type)
         {
             Console.WriteLine("Not enough food to feed all {0}.", type);
@@ -274,7 +280,24 @@ namespace Humane_Society
             return input;
 
         }
-        
+        public string which_type_to_display()
+        {
+            Console.WriteLine("Would you like to view 'cats', 'dogs', or 'birds'?");
+            string input = Console.ReadLine();
+            return input;
+        }
+        public void display_noAdopted(string type)
+        {
+            Console.WriteLine("No adopted {0}s in the system at this time", type);
+        }
+        public void display_noUnadopted(string type)
+        {
+            Console.WriteLine("No unadopted {0}s in the system at this time", type);
+        }
+        public void display_none_of_type(string type)
+        {
+            Console.WriteLine("No {0}s in the system at this time", type);
+        }
 
 
 

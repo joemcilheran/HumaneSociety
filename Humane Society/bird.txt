@@ -1,2 +1,3 @@
-cookie bird cockatoo 3 bird 1 False 4 no
+cookie bird cockatoo 3 bird 1 True 4 no
 wally bird parrot 2 bird 1 True 9 no
+bill bird Macaw 5 bird 1 True 1 no

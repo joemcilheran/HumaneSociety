@@ -3,7 +3,7 @@ cat 2 none
 cat 3 none
 cat 4 none
 cat 5 none
-cat 6 talbot
+cat 6 none
 cat 7 none
 cat 8 none
 cat 9 none

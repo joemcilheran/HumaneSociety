@@ -1,4 +1,4 @@
-bird 1 none
+bird 1 bill
 bird 2 none
 bird 3 none
 bird 4 cookie
@@ -8,3 +8,8 @@ bird 7 none
 bird 8 none
 bird 9 wally
 bird 10 none
+bird 11 none
+bird 12 none
+bird 13 none
+bird 14 none
+bird 15 none

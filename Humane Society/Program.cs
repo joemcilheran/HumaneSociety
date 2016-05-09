@@ -11,7 +11,7 @@ namespace Humane_Society
         static void Main(string[] args)
         {
             Shelter shelter = new Shelter();
-            shelter.run_program();
+            shelter.run_shelter();
         }
     }
 }
